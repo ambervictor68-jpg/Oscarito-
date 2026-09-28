@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    <children>
+        <RowList 
+            id="rowList" 
+            translation="[80, 100]" 
+            itemSize="[1280, 240]" 
+            numRows="3" />
+
+        <Video 
+            id="videoPlayer" 
+            visible="false" 
+            translation="[0, 0]" 
+            width="1280" 
+            height="720" />
+    </children>
+</component>
