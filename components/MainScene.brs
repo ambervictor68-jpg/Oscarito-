@@ -3,17 +3,18 @@ sub Init()
     m.videoPlayer = m.top.FindNode("videoPlayer")
     m.rowList.ObserveField("rowItemSelected", "onItemSelected")
 
-    ' Cargar tu API Worker
+    ' Cargar lista M3U de Animación
     m.feedTask = CreateObject("roSGNode", "FeedTask")
-    m.feedTask.url = m.feedTask.url = "https://iptv-org.github.io/iptv/index.category.m3u"
-
+    m.feedTask.url = "https://iptv-org.github.io/iptv/categories/animation.m3u"
     m.feedTask.ObserveField("content", "onDataLoaded")
     m.feedTask.control = "RUN"
 end sub
 
 sub onDataLoaded()
-    m.rowList.content = m.feedTask.content
-    m.rowList.SetFocus(true)
+    if m.feedTask.content <> invalid
+        m.rowList.content = m.feedTask.content
+        m.rowList.SetFocus(true)
+    end if
 end sub
 
 sub onItemSelected(event as Object)
@@ -38,3 +39,4 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     end if
     return false
 end function
+
