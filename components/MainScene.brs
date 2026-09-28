@@ -5,7 +5,8 @@ sub Init()
 
     ' Cargar tu API Worker
     m.feedTask = CreateObject("roSGNode", "FeedTask")
-    m.feedTask.url = "https://zonaapp.ikkihkurogane.workers.dev/"
+    m.feedTask.url = m.feedTask.url = "https://iptv-org.github.io/iptv/index.category.m3u"
+
     m.feedTask.ObserveField("content", "onDataLoaded")
     m.feedTask.control = "RUN"
 end sub
